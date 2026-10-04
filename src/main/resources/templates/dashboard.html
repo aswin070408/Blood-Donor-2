@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>User Dashboard</title>
+
+    <link rel="stylesheet"
+          href="/style.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <h1>Welcome, <span th:text="${user.name}"></span> 🩸</h1>
+
+    <h2>My Details</h2>
+
+    <p>
+        <b>Username:</b>
+        <span th:text="${user.username}"></span>
+    </p>
+
+    <p>
+        <b>Name:</b>
+        <span th:text="${user.name}"></span>
+    </p>
+
+    <p>
+        <b>Phone:</b>
+        <span th:text="${user.phone}"></span>
+    </p>
+
+    <p>
+        <b>Email:</b>
+        <span th:text="${user.email}"></span>
+    </p>
+
+    <p>
+        <b>City:</b>
+        <span th:text="${user.city}"></span>
+    </p>
+
+    <p>
+        <b>Blood Group:</b>
+        <span th:text="${user.bloodGroup}"></span>
+    </p>
+
+    <hr>
+
+    <a href="/donors">
+        <button>Find Blood Donors</button>
+    </a>
+
+    <a href="/download">
+        <button>Download Excel</button>
+    </a>
+
+    <a href="/">
+        <button>Logout</button>
+    </a>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet"
+          href="/style.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <h1>🛠️ Admin Dashboard</h1>
+
+    <h2>Donor Management</h2>
+
+    <h3>Add New Donor</h3>
+
+    <form action="/admin/add"
+          method="post">
+
+        <input type="text"
+               name="name"
+               placeholder="Donor Name"
+               required>
+
+        <select name="bloodGroup"
+                required>
+
+            <option>O+</option>
+            <option>O-</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+
+        </select>
+
+        <input type="text"
+               name="phone"
+               placeholder="Phone"
+               required>
+
+        <input type="text"
+               name="city"
+               placeholder="City"
+               required>
+
+        <button type="submit">
+            Add Donor
+        </button>
+
+    </form>
+
+    <hr>
+
+    <h2>All Donors</h2>
+
+    <table>
+
+        <tr>
+
+            <th>Name</th>
+            <th>Blood Group</th>
+            <th>Phone</th>
+            <th>City</th>
+            <th>Action</th>
+
+        </tr>
+
+        <tr th:each="donor : ${donors}">
+
+            <td th:text="${donor.name}">
+            </td>
+
+            <td th:text="${donor.bloodGroup}">
+            </td>
+
+            <td th:text="${donor.phone}">
+            </td>
+
+            <td th:text="${donor.city}">
+            </td>
+
+            <td>
+
+                <a th:href="@{'/admin/delete/' + ${donor.id}}">
+
+                    <button>
+                        Delete
+                    </button>
+
+                </a>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+    <br>
+
+    <a href="/download">
+
+        <button>
+             Download Excel
+        </button>
+
+    </a>
+
+    <a href="/">
+
+        <button>
+            Logout
+        </button>
+
+    </a>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>User Login</title>
+
+    <link rel="stylesheet"
+          href="/style.css">
+
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>User Login</h1>
+
+    <p class="success"
+       th:if="${message}"
+       th:text="${message}">
+    </p>
+
+    <p class="error"
+       th:if="${error}"
+       th:text="${error}">
+    </p>
+
+    <form action="/login"
+          method="post">
+
+        <input type="text"
+               name="username"
+               placeholder="Username"
+               required>
+
+        <input type="password"
+               name="password"
+               placeholder="Password"
+               required>
+
+        <button type="submit">
+            Login
+        </button>
+
+    </form>
+
+    <a href="/register">
+        New user? Create Account
+    </a>
+
+</div>
+
+</body>
+
+</html>

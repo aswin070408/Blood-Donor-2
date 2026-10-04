@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Find Blood Donors</title>
+
+    <link rel="stylesheet"
+          href="/style.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <h1>🩸 Available Blood Donors</h1>
+
+    <form action="/donors"
+          method="get">
+
+        <select name="bloodGroup">
+
+            <option value="ALL">
+                All Blood Groups
+            </option>
+
+            <option>O+</option>
+            <option>O-</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+
+        </select>
+
+        <button type="submit">
+            Search
+        </button>
+
+    </form>
+
+    <br>
+
+    <table>
+
+        <tr>
+
+            <th>Name</th>
+            <th>Blood Group</th>
+            <th>Phone</th>
+            <th>City</th>
+            <th>Status</th>
+
+        </tr>
+
+        <tr th:each="donor : ${donors}">
+
+            <td th:text="${donor.name}">
+            </td>
+
+            <td th:text="${donor.bloodGroup}">
+            </td>
+
+            <td th:text="${donor.phone}">
+            </td>
+
+            <td th:text="${donor.city}">
+            </td>
+
+            <td>Available</td>
+
+        </tr>
+
+    </table>
+
+    <br>
+
+    <a href="/download">
+        <button>
+             Download Excel
+        </button>
+    </a>
+
+    <a href="/">
+        <button>
+            Home
+        </button>
+    </a>
+
+</div>
+
+</body>
+
+</html>
